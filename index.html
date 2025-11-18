@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Info</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🌤️ Weather Info</h1>
+            <p class="tagline">Your beautiful weather companion</p>
+            
+            <div class="search-container">
+                <form class="search-box" id="searchForm">
+                    <input 
+                        type="text" 
+                        id="cityInput" 
+                        placeholder="Enter city name..."
+                        autocomplete="off"
+                    >
+                    <button type="submit" class="search-btn">Search</button>
+                </form>
+                <button class="location-btn" id="locationBtn">📍 Use My Location</button>
+            </div>
+        </header>
+
+        <div class="error-message" id="errorMessage"></div>
+
+        <main id="weatherContent" class="hidden">
+            <section class="current-weather">
+                <h2 class="city-name" id="cityName">—</h2>
+                <p class="weather-date" id="weatherDate">—</p>
+                <div class="weather-icon-main" id="weatherIcon">☀️</div>
+                <div class="temperature" id="temperature">—°</div>
+                <p class="weather-description" id="weatherDescription">—</p>
+            </section>
+
+            <section class="weather-details">
+                <div class="detail-card">
+                    <div class="detail-icon">🌡️</div>
+                    <div class="detail-label">Feels Like</div>
+                    <div class="detail-value" id="feelsLike">—°</div>
+                </div>
+                <div class="detail-card">
+                    <div class="detail-icon">💧</div>
+                    <div class="detail-label">Humidity</div>
+                    <div class="detail-value" id="humidity">—%</div>
+                </div>
+                <div class="detail-card">
+                    <div class="detail-icon">💨</div>
+                    <div class="detail-label">Wind Speed</div>
+                    <div class="detail-value" id="windSpeed">— m/s</div>
+                </div>
+                <div class="detail-card">
+                    <div class="detail-icon">🔽</div>
+                    <div class="detail-label">Pressure</div>
+                    <div class="detail-value" id="pressure">— hPa</div>
+                </div>
+            </section>
+
+            <section class="forecast-section">
+                <h2 class="section-title">5-Day Forecast</h2>
+                <div class="forecast-container" id="forecastContainer">
+                    <!-- Forecast cards will be dynamically inserted here -->
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="spinner"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
